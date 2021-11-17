@@ -1,6 +1,26 @@
+var party_anim_time = window.innerHeight*7; //anim time based on screen height
+var small_delay = 100;
+var bubble_size = window.innerWidth*0.1; //10% of viewport width
+var glow_size = bubble_size*0.26; // beautiful glow
+
+var viewportH1 = 1.2*window.innerHeight; //get viewport min
+var viewportH2 = 2*window.innerHeight; //get viewport max
+var viewportW1 = 0; //get viewport width min
+var viewportW2 = window.innerWidth; //get viewport width max
+
 $(function(){
     $('.start_party').click(function(){
         $('body').append('<div class="watermark">Vitallek 2021</div>');
+
+        $('.gsize').css('width',bubble_size);
+        $('.gsize').css('height',bubble_size);
+
+        $('.pink1').css('box-shadow','0px 0px '+(glow_size)+'px '+(glow_size*0.5)+'px pink');
+        $('.blue1').css('box-shadow','0px 0px '+(glow_size)+'px '+(glow_size*0.5)+'px #347deb');
+        $('.green1').css('box-shadow','0px 0px '+(glow_size)+'px '+(glow_size*0.5)+'px #74eb34');
+        $('.orange1').css('box-shadow','0px 0px '+(glow_size)+'px '+(glow_size*0.5)+'px #f5641b');
+        $('.violet1').css('box-shadow','0px 0px '+(glow_size)+'px '+(glow_size*0.5)+'px #881bf5');
+
 
         $('.wrapper').hide();
         $('.group1').hide();
@@ -21,24 +41,28 @@ $(function(){
     });
 });
 
-var viewportH1 = 1.2*window.innerHeight; //get viewport min
-var viewportH2 = 2*window.innerHeight; //get viewport max
-var viewportW1 = 0; //get viewport width min
-var viewportW2 = window.innerWidth; //get viewport width max
-
 $(window).resize(function() {
     viewportH1 = 1.2*window.innerHeight; //get viewport min
     viewportH2 = 2*window.innerHeight; //get viewport max
     viewportW1 = 0; //get viewport width min
     viewportW2 = window.innerWidth; //get viewport width max
+
+    bubble_size = window.innerWidth*0.1;
+    glow_size = bubble_size*0.26;
+
+    $('.gsize').css('width',bubble_size);
+    $('.gsize').css('height',bubble_size);
+
+    $('.pink1').css('box-shadow','0px 0px '+(glow_size)+'px '+(glow_size*0.5)+'px pink');
+    $('.blue1').css('box-shadow','0px 0px '+(glow_size)+'px '+(glow_size*0.5)+'px #347deb');
+    $('.green1').css('box-shadow','0px 0px '+(glow_size)+'px '+(glow_size*0.5)+'px #74eb34');
+    $('.orange1').css('box-shadow','0px 0px '+(glow_size)+'px '+(glow_size*0.5)+'px #f5641b');
+    $('.violet1').css('box-shadow','0px 0px '+(glow_size)+'px '+(glow_size*0.5)+'px #881bf5');
   });
 
 function randomIntFromInterval(min, max) { // min and max included 
     return Math.floor(Math.random() * (max - min + 1) + min)
 }
-
-var party_anim_time = window.innerHeight*5; //anim time based on screen height
-var small_delay = 100;
 
 var group1coordY1;
 var group1coordX1;
